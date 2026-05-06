@@ -1,0 +1,207 @@
+/* ============================================================
+   PAL Intercept Controller — Light / Neutral Theme
+   ============================================================ */
+
+/* --- Root & background --- */
+.root {
+    -fx-base: #f5f5f5;
+    -fx-background-color: #f0f1f3;
+    -fx-font-family: "System";
+    -fx-font-size: 13px;
+}
+
+/* --- Peer control panel (VBox) --- */
+.peer-panel {
+    -fx-background-color: #f0f1f3;
+    -fx-padding: 14;
+    -fx-spacing: 10;
+}
+
+/* --- Card sections (control rows wrapped in a container) --- */
+.control-card {
+    -fx-background-color: white;
+    -fx-background-radius: 6;
+    -fx-border-color: #dcdde0;
+    -fx-border-radius: 6;
+    -fx-padding: 10 14;
+    -fx-spacing: 8;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* --- Header label --- */
+.peer-header {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 0 2 0;
+}
+
+/* --- Toggle buttons (shared base) --- */
+.toggle-button {
+    -fx-background-color: #e8eaed;
+    -fx-background-radius: 4;
+    -fx-text-fill: #444;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 14;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.toggle-button:hover {
+    -fx-background-color: #d5d8dc;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #5b8c85;
+    -fx-text-fill: white;
+}
+
+.toggle-button:selected:hover {
+    -fx-background-color: #4e7a74;
+}
+
+/* --- Pause toggle — slightly more prominent when active --- */
+.pause-toggle:selected {
+    -fx-background-color: #c0392b;
+    -fx-text-fill: white;
+}
+
+.pause-toggle:selected:hover {
+    -fx-background-color: #a93226;
+}
+
+/* --- Next (step) button --- */
+.next-button {
+    -fx-background-color: #d6eaf8;
+    -fx-background-radius: 4;
+    -fx-text-fill: #2471a3;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 14;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.next-button:hover {
+    -fx-background-color: #aed6f1;
+}
+
+.next-button:disabled {
+    -fx-opacity: 0.4;
+}
+
+/* --- Slider --- */
+.slider .track {
+    -fx-background-color: #d5d8dc;
+    -fx-background-radius: 3;
+    -fx-pref-height: 6;
+}
+
+.slider .thumb {
+    -fx-background-color: #5b8c85;
+    -fx-background-radius: 8;
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-cursor: hand;
+}
+
+.slider .thumb:hover {
+    -fx-background-color: #4e7a74;
+}
+
+.slider:disabled .thumb {
+    -fx-background-color: #bbb;
+}
+
+.slider:disabled .track {
+    -fx-background-color: #e8eaed;
+}
+
+.slider .axis {
+    -fx-tick-label-fill: #777;
+    -fx-font-size: 10px;
+}
+
+/* --- Throttle value label --- */
+.throttle-value {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5b8c85;
+    -fx-min-width: 50;
+}
+
+/* --- Message log --- */
+.message-log {
+    -fx-background-color: white;
+    -fx-border-color: #dcdde0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-family: "monospace";
+    -fx-font-size: 12px;
+}
+
+.message-log .content {
+    -fx-background-color: white;
+}
+
+/* --- Status bar --- */
+.status-bar {
+    -fx-font-size: 11px;
+    -fx-text-fill: #777;
+    -fx-padding: 4 2 0 2;
+    -fx-border-color: #e0e0e0 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* --- Tab pane --- */
+.tab-pane .tab-header-background {
+    -fx-background-color: #e8eaed;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #dcdde0;
+    -fx-background-radius: 4 4 0 0;
+    -fx-padding: 4 14;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: white;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #555;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #2c3e50;
+}
+
+/* --- Defaults panel --- */
+.defaults-panel {
+    -fx-background-color: #f0f1f3;
+    -fx-padding: 24;
+    -fx-spacing: 14;
+    -fx-alignment: TOP_LEFT;
+}
+
+.defaults-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.defaults-subtitle {
+    -fx-text-fill: #888;
+    -fx-font-size: 12px;
+    -fx-padding: 0 0 4 0;
+}
+
+.waiting-label {
+    -fx-text-fill: #999;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+    -fx-padding: 12 0 0 0;
+}

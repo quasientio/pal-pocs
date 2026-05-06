@@ -1,0 +1,13 @@
+bundle: "controller-poc"
+defaults:
+  peer: "controller"
+  priority: 0
+
+intercepts:
+  - target: java.io.PrintStream.println
+    type: BEFORE
+    callback:
+      class: io.quasient.pal.pocs.controller.ControllerCallback
+      method: handle
+    params:
+      - java.lang.String

@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'com.diffplug.spotless' version '6.25.0'
+    id 'com.gradleup.shadow' version '8.3.5'
+}
+
+group = 'io.quasient.pal.pocs'
+version = '1.0.0'
+
+ext {
+    palVersion = '1.0.0'
+    javafxVersion = '17.0.13'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+javafx {
+    version = javafxVersion
+    modules = ['javafx.base', 'javafx.graphics', 'javafx.controls']
+}
+
+dependencies {
+    implementation "io.quasient.pal:pal-api:${palVersion}"
+    implementation "io.quasient.pal:pal-client:${palVersion}"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('shadowJar') {
+    archiveBaseName = 'controller'
+    archiveClassifier = 'all'
+    archiveVersion = ''
+    manifest {
+        attributes 'Main-Class': 'io.quasient.pal.pocs.controller.ControllerApp'
+    }
+    mergeServiceFiles()
+}
+
+tasks.named('build') {
+    dependsOn 'shadowJar'
+}
+
+spotless {
+    java {
+        googleJavaFormat('1.19.2')
+    }
+}
+
+tasks.named('compileJava') {
+    finalizedBy 'spotlessApply'
+}
